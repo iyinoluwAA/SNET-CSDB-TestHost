@@ -1,0 +1,188 @@
+/* Modal overlay */
+
+/* Hide background content when the modal is active */
+.hidden-background {
+    visibility: hidden; /* Makes content invisible but preserves layout */
+  pointer-events: none;
+  }
+
+.modal-overlay {
+    position: fixed;
+    top: 120px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8); /* Reduced opacity for a sleeker look */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1050; /* Matches Bootstrap modal z-index */
+  }
+  
+  /* Modal container */
+  .modal-container {
+    background: #f4f4f4;
+    border-radius: 8px;
+    max-width: none; /* No need for max-width; Bootstrap columns handle this */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  /* Modal content */
+  .modal-content {
+    max-height: 80vh; /* Limits modal height */
+    overflow-y: auto; /* Adds scrolling if content overflows */
+    padding: 20px;
+    border-radius: 16px;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+  }
+  
+  /* Modal header */
+  .modal-header {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #222;  
+  }
+  
+  .modal-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #222;
+  }
+  
+  /* Modal body */
+  .modal-body {
+    line-height: 1.6;
+    font-size: 1rem;
+  }
+  
+  .modal-body p {
+    margin-bottom: 20px;
+  }
+  
+  .modal-body ul {
+    padding-left: 20px;
+    margin: 20px 0;
+  }
+  
+  .modal-body ul li {
+    margin-bottom: 10px;
+  }
+  
+  /* Fade-in effect */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* List item hover effect */
+  .modal-body ul li:hover {
+    color: #007bff;
+    cursor: pointer;
+  }
+  
+  /* Modal footer */
+  .modal-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-top: 1px solid #ddd;
+    background: #f8f8f8;
+  }
+  
+  .form-check {
+    display: flex;
+    align-items: center;
+  }
+  
+  .proceed-button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+  }
+  
+  .proceed-button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .proceed-button:hover:not(:disabled) {
+    background: #0056b3;
+  }
+  
+/* Responsive Design */
+
+  /* iPhone SE and smaller screens (max-width: 375px) */
+@media screen and (max-width: 375px) {
+    .modal-overlay {
+        top: 100px; /* Lower the modal to ensure it fits on smaller screens */
+    }
+  
+    .modal-content {
+      padding: 10px; /* Slightly reduce padding for better fit */
+    }
+  
+    .proceed-button {
+      font-size: 0.85rem; /* Adjust button font size */
+      padding: 8px 16px;
+    }
+  }
+
+  /* Responsive Design on normal phone screen */
+  
+        @media (max-width: 576px) {
+            .modal-overlay{
+                top: 220px ;
+            }
+        
+            .modal-content {
+              padding: 15px;
+              font-size: 0.9rem;
+            }
+          
+            .proceed-button {
+              font-size: 0.9rem;
+              padding: 8px 16px;
+            }
+          }
+  /* iPad Mini, iPad Air, and similar tablets (max-width: 1024px) */
+  @media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+    .modal-overlay {
+      top: 150px; /* Balance modal position for taller tablets */
+    }
+  }
+  
+  /* iPad Pro (viewport height ~1366px) */
+  @media screen and (min-width: 1024px) and (max-height: 1366px) {
+    .modal-overlay {
+      top: 180px; /* Slight adjustment for larger tablets */
+    }
+  }
+  
+  /* Surface Pro 7, Surface Duo, and similar (viewport width ~1800px) */
+  @media screen and (min-width: 1200px) and (max-height: 1800px) {
+    .modal-overlay {
+      top: 140px; /* Ensure modal stays visually balanced */
+    }
+  }
+  
+  /* Nest Hub and Nest Hub Max */
+  @media screen and (max-width: 1280px) and (max-height: 800px) {
+    .modal-overlay {
+      top: 100px; /* Adjust modal for wider but shorter screens */
+    }
+  }
