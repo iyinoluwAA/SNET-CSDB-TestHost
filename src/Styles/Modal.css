@@ -10,7 +10,7 @@
     position: fixed;
     top: 120px;
     left: 0;
-    width: 100%;
+    width: 110%;
     height: 100%;
     background: rgba(0, 0, 0, 0.8); /* Reduced opacity for a sleeker look */
     display: flex;
@@ -97,11 +97,18 @@
     padding: 20px;
     border-top: 1px solid #ddd;
     background: #f8f8f8;
+    flex-wrap: nowrap; /* Prevents wrapping to the next line */
+    gap: 10px; /* Adds a small gap between items */
   }
   
   .form-check {
     display: flex;
     align-items: center;
+    margin: 0;
+  }
+  .form-check-label {
+    margin: 0; /* Removes default margins */
+    white-space: nowrap; /* Prevents the label from wrapping */
   }
   
   .proceed-button {
@@ -113,6 +120,7 @@
     cursor: pointer;
     font-size: 1rem;
     transition: background 0.3s ease;
+    flex-shrink: 0;
   }
   
   .proceed-button:disabled {
@@ -171,6 +179,7 @@
     .modal-overlay {
       top: 180px; /* Slight adjustment for larger tablets */
     }
+
   }
   
   /* Surface Pro 7, Surface Duo, and similar (viewport width ~1800px) */
@@ -178,6 +187,7 @@
     .modal-overlay {
       top: 140px; /* Ensure modal stays visually balanced */
     }
+   
   }
   
   /* Nest Hub and Nest Hub Max */

@@ -1,7 +1,8 @@
 import './App.css'
 import { BrowserRouter as Router , Routes, Route } from 'react-router-dom'
 import SignUpWithDiscord from './Pages/SignUpWithDiscord'
-import SetUsernamePassword from './Components/SetUsernamePassword'
+import Members from './Pages/Members'
+
 
 
 
@@ -12,7 +13,7 @@ const App = () => {
      <Router>
       <Routes>
         <Route path="/" element={<SignUpWithDiscord />} />
-        <Route path="/setup-username-password" element={<SetUsernamePassword />} />
+        <Route path="/members" element={<Members />}   />
       </Routes>
      </Router>
     </>

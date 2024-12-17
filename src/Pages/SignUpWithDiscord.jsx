@@ -28,7 +28,7 @@ const handleModalProceed = () => {
                const { error } = await supabase.auth.signInWithOAuth({
                     provider: 'discord',
                     options : {
-                         redirectTo : 'http://localhost:5173/setup-username-password'
+                         redirectTo : 'http://localhost:5173/members'
                     },
                });
                if (error) throw error; 
