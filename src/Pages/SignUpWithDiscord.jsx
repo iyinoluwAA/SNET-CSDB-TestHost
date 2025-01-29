@@ -49,14 +49,14 @@ const handleModalProceed = () => {
                      <>
                      <section id="app-content" >
                     <img src={logo} alt="App Logo" className="appLogo" />
-                    <h2>SingularityNET Collobration Skill Database</h2>
+                    <h2>SigularityNET Collaboration Skill Database</h2>
                     { isLoading ? (
                     <Loading />
                ) : (
                     <button onClick={handleDiscordButton} className="discord-button" >
                     <FontAwesomeIcon  icon={faDiscord} style={{ marginRight: '8px' }} />
                     Sign up with Discord</button>
-                    )};
+                    )}
                     { error && <p className="error-message">{error}</p> }        
                 </section>   
                     </>
